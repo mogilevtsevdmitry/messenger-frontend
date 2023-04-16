@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import { IconBtn } from "@/shared/ui/icon";
+import { IconBtn } from "@/shared/ui";
 
 interface IFormInputs {
   name: string;
