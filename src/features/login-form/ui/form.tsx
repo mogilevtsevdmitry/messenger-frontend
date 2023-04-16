@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 
-import { IconBtn } from "@/shared/ui";
+import { IconBtn, Input } from "@/shared/ui";
 
 interface IFormInputs {
   email: string;
@@ -31,27 +31,16 @@ export const Form = () => {
       <h2 className="text-center text-2xl text-white">Вход</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xl">
-          <label className="label" htmlFor="email">
-            <span className="label-text">E-mail</span>
-          </label>
-          <input
-            {...register("email", {
+          <Input
+            register={register("email", {
               required: "Это обязательное поле!",
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
                 message: "Неверный формат email!",
               },
             })}
-            autoComplete="email"
-            id="email"
-            placeholder="user@gmail.com"
-            className={`input-bordered input w-full ${errors.email && "input-error"}`}
+            error={errors.email}
           />
-          {errors.email && (
-            <span className="label-text mt-1 text-error">
-              {errors.email?.message || "Это обязательное поле!"}
-            </span>
-          )}
           <label className="label" htmlFor="password">
             <span className="label-text">Пароль</span>
           </label>
