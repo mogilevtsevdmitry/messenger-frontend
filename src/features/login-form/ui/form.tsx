@@ -1,0 +1,46 @@
+"use client";
+
+import Link from "next/link";
+
+import { IconBtn } from "@/shared/ui/icon";
+
+export const Form = () => {
+  return (
+    <div className="flex flex-col items-center border-r-8 p-20">
+      <h2 className="text-center text-2xl text-white">Вход</h2>
+      <form>
+        <div className="form-control w-full max-w-xl">
+          <label className="label" htmlFor="email">
+            <span className="label-text">E-mail</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            placeholder="user@gmail.com"
+            className="input-bordered input w-full"
+          />
+          <label className="label" htmlFor="password">
+            <span className="label-text">Пароль</span>
+          </label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Введите пароль"
+            className="input-bordered input w-full"
+          />
+        </div>
+        <div className="mt-4 flex items-center gap-4">
+          <button className="btn" type="submit">
+            Войти
+          </button>
+          <Link href="/auth">Нет аккаунта? Зарегистрируйтесь</Link>
+        </div>
+
+        <div className="mt-4 flex justify-center gap-2">
+          <IconBtn name="social/google" />
+          <IconBtn name="social/vkontakte" />
+        </div>
+      </form>
+    </div>
+  );
+};
