@@ -17,7 +17,9 @@ export const Form = () => {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IFormInputs>();
+  } = useForm<IFormInputs>({
+    mode: "onBlur",
+  });
 
   const onSubmit: SubmitHandler<IFormInputs> = (data) => {
     console.log(data);
