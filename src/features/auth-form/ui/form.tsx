@@ -1,36 +1,58 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { SubmitHandler, useForm } from "react-hook-form";
 
-import { IconBtn } from "@/shared/ui/icon";
+import { emailRule, nameRule, passwordRule } from "@/shared/helpers";
+import { IconBtn, Input } from "@/shared/ui";
+
+interface IFormInputs {
+  name: string;
+  email: string;
+  password: string;
+}
 
 export const Form = () => {
+  const router = useRouter();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IFormInputs>({
+    mode: "onBlur",
+  });
+
+  const onSubmit: SubmitHandler<IFormInputs> = (data) => {
+    console.log(data);
+    void router.push("/");
+  };
   return (
     <div className="flex flex-col items-center border-r-8 p-20">
       <h2 className="text-center text-2xl text-white">Регистрация</h2>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xl">
-          <label className="label" htmlFor="name">
-            <span className="label-text">Имя</span>
-          </label>
-          <input type="text" id="name" placeholder="Иван" className="input-bordered input w-full" />
-          <label className="label" htmlFor="email">
-            <span className="label-text">E-mail</span>
-          </label>
-          <input
-            type="email"
-            id="email"
-            placeholder="user@gmail.com"
-            className="input-bordered input w-full"
+          <Input
+            register={register("name", nameRule)}
+            id="name"
+            label="Имя"
+            error={errors.name}
+            placeholder="Иван"
           />
-          <label className="label" htmlFor="password">
-            <span className="label-text">Пароль</span>
-          </label>
-          <input
+          <Input
+            register={register("email", emailRule)}
+            id="email"
+            label="E-mail"
+            error={errors.email}
+            placeholder="user@gmail.com"
+          />
+          <Input
+            register={register("password", passwordRule)}
             type="password"
             id="password"
+            label="Пароль"
+            error={errors.password}
             placeholder="Введите пароль"
-            className="input-bordered input w-full"
           />
         </div>
         <div className="mt-4 flex items-center gap-4">
