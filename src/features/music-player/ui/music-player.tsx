@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Icon } from "@/shared/ui";
 
 export const MusicPlayer = () => {
