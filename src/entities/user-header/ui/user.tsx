@@ -1,15 +1,15 @@
-import React from "react";
-import {UserSettings} from "@/features/user-settings";
-// import {Image} from "next/"
+import Image from "next/image";
+
+import { UserSettings } from "./user-settings";
 
 export const User = () => {
   return (
-    <div className="hidden lg:flex items-center gap-3 ml-2 lg:ml-auto">
+    <div className="ml-2 hidden items-center gap-3 lg:ml-auto lg:flex">
       <span className="text-lg font-medium">Pauchok</span>
       <div className="dropdown-end dropdown">
         <label tabIndex={0} className="btn-ghost btn-circle avatar btn">
           <div className="w-10 rounded-full">
-            <img src="https://comicbookmovie.com/images/articles/banners/198568.jpg" />
+            <Image width={40} height={40} src="/image/avatar.jpg" alt="Аватар" />
           </div>
         </label>
         <UserSettings />

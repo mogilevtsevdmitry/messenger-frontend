@@ -2,7 +2,7 @@ import { MusicPlayer } from "@/features/music-player";
 import { Notification } from "@/features/notification";
 import { Search } from "@/features/search";
 
-import { User } from "./User";
+import { User } from "@/entities/user-header";
 
 export const Header = () => {
   return (
