@@ -1,28 +1,39 @@
-import { HTMLAttributes } from "react";
+import { AllHTMLAttributes } from "react";
 import { FieldError, UseFormRegisterReturn } from "react-hook-form";
 
-export interface InputProps extends HTMLAttributes<HTMLInputElement> {
-  register: UseFormRegisterReturn<string>;
+export interface InputProps extends AllHTMLAttributes<HTMLInputElement> {
+  label: string;
   error?: FieldError;
+  register: UseFormRegisterReturn<string>;
+  wrapperClassName?: string;
 }
 
-export const Input = ({ className, error, register, ...props }: InputProps) => {
+export const Input = ({
+  wrapperClassName,
+  className,
+  id,
+  placeholder,
+  label,
+  error,
+  register,
+  ...props
+}: InputProps) => {
   return (
-    <div>
-      <label className="label" htmlFor="email">
-        <span className="label-text">E-mail</span>
+    <div className={wrapperClassName}>
+      <label className="label" htmlFor={id}>
+        <span className="label-text">{label}</span>
       </label>
       <input
         {...register}
-        autoComplete="email"
-        id="email"
-        placeholder="user@gmail.com"
-        className={`input-bordered input w-full ${error && "input-error"}`}
+        {...props}
+        id={id}
+        placeholder={placeholder}
+        className={`input-bordered input w-full ${className} ${error && "input-error"}`}
       />
       {error && (
-        <span className="label-text mt-1 text-error">
+        <div className="label-xtext mt-1 w-full text-error">
           {error.message || "Это обязательное поле!"}
-        </span>
+        </div>
       )}
     </div>
   );

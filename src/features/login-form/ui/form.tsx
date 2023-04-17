@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
 
+import { emailRule, passwordRule } from "@/shared/helpers";
 import { IconBtn, Input } from "@/shared/ui";
 
 interface IFormInputs {
@@ -32,31 +33,20 @@ export const Form = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control w-full max-w-xl">
           <Input
-            register={register("email", {
-              required: "Это обязательное поле!",
-              pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "Неверный формат email!",
-              },
-            })}
+            register={register("email", emailRule)}
+            id="email"
+            label="E-mail"
             error={errors.email}
+            placeholder="user@gmail.com"
           />
-          <label className="label" htmlFor="password">
-            <span className="label-text">Пароль</span>
-          </label>
-          <input
-            {...register("password", {
-              required: true,
-            })}
-            autoComplete="current-password"
+          <Input
+            register={register("password", passwordRule)}
             type="password"
             id="password"
+            label="Пароль"
+            error={errors.password}
             placeholder="Введите пароль"
-            className={`input-bordered input w-full ${errors.password && "input-error"}`}
           />
-          {errors.password && (
-            <span className="label-text mt-1 text-error">Это обязательное поле!</span>
-          )}
         </div>
         <div className="mt-4 flex items-center gap-4">
           <button className="btn" type="submit">
