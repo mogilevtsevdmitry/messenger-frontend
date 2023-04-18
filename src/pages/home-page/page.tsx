@@ -1,9 +1,9 @@
-import { Header } from "../../widgets/header";
+import { MainLayout } from "@/widgets/layouts";
 
 export const HomePage = () => {
   return (
-    <main>
-      <Header />
-    </main>
+    <MainLayout>
+      <main></main>
+    </MainLayout>
   );
 };

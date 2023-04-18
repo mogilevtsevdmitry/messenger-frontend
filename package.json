@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "svg": "npx @neodx/svg --group --root assets -o public/sprite -d src/shared/ui/icon/sprite.gen.ts"
+    "svg": "npx @neodx/svg --group --root src/assets -o public/sprite -d src/shared/ui/icon/sprite.gen.ts"
   },
   "dependencies": {
     "@types/node": "18.15.11",
