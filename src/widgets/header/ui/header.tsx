@@ -6,7 +6,7 @@ import { User } from "@/entities/user-header";
 
 export const Header = () => {
   return (
-    <div className="navbar bottom-0 z-10 mx-auto max-w-[1190px] bg-base-100">
+    <div className="container navbar bottom-0 z-10 mx-auto bg-base-100">
       <div className="flex flex-col items-start space-y-2 lg:hidden">
         <span className="block h-0.5 w-8 bg-gray-600"></span>
         <span className="block h-0.5 w-8 bg-gray-600"></span>
