@@ -8,8 +8,8 @@ export interface IconBtnProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const IconBtn = ({
-  className,
-  iconClassName,
+  className = "",
+  iconClassName = "",
   name,
   type = "button",
   ...props
@@ -19,7 +19,7 @@ export const IconBtn = ({
       type={type}
       className={`no-animation btn flex h-12 w-12 items-center justify-center rounded-full p-0  ${className}`}
       {...props}>
-      <Icon name={name} className={`h-5 w-5 ${iconClassName ? iconClassName : ""}`} />
+      <Icon name={name} className={`h-5 w-5 ${iconClassName}`} />
     </button>
   );
 };
