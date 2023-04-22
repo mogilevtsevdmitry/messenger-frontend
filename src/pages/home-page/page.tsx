@@ -1,4 +1,5 @@
 import { Chat } from "@/widgets/chat";
+import { ChatInfo } from "@/widgets/chat-info";
 import { ChatsList } from "@/widgets/chats-list";
 import { MainLayout } from "@/widgets/layouts";
 
@@ -9,6 +10,7 @@ export const HomePage = () => {
         <div className="flex">
           <ChatsList />
           <Chat />
+          <ChatInfo />
         </div>
       </main>
     </MainLayout>

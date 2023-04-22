@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .custom-scrollbar {
+    @apply scrollbar scrollbar-thin scrollbar-thumb-neutral scrollbar-thumb-rounded-xl
+  }
+
+  .chat-small {
+    @apply text-sm opacity-80;
+  }
+
+}

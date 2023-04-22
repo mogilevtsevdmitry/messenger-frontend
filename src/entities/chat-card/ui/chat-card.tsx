@@ -10,7 +10,7 @@ export const ChatCard = () => {
           </div>
         </div>
         <div className="max-w-full overflow-hidden">
-          <strong>The73756:</strong>
+          <strong className="font-semibold">The73756:</strong>
           <div className="flex max-w-min gap-1">
             <p className="truncate">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             <p>10:11</p>
