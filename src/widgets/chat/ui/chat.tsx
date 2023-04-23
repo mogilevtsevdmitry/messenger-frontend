@@ -34,7 +34,7 @@ export const Chat = () => {
           </button>
         </div>
       </div>
-      <div className="divider mt-0"></div>
+      <div className="divider mb-0 mt-0 px-2"></div>
       <div className="custom-scrollbar flex-1 overflow-auto px-4">
         {Array.from({ length: 10 }).map((_, index) => (
           <ChatMessage status={getStatus()} isUserMessage={Math.random() < 0.5} key={index} />

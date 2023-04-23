@@ -3,7 +3,7 @@ import Image from "next/image";
 export const ChatCard = () => {
   return (
     <>
-      <article className="flex max-w-md px-4">
+      <article className="flex w-full">
         <div className="avatar">
           <div className="w-12 rounded-full">
             <Image src="/image/avatar.jpg" width="48" height="48" alt="Аватар чата" />
@@ -17,7 +17,7 @@ export const ChatCard = () => {
           </div>
         </div>
       </article>
-      <div className="divider pointer-events-none m-2 w-full border-none px-0 py-0 after:content-none "></div>
+      <div className="divider pointer-events-none mx-0 mb-1 mt-1 w-full border-none px-0 py-0 after:content-none"></div>
     </>
   );
 };

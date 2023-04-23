@@ -7,7 +7,7 @@ export const HomePage = () => {
   return (
     <MainLayout>
       <main>
-        <div className="flex">
+        <div className="flex gap-2">
           <ChatsList />
           <Chat />
           <ChatInfo />

@@ -4,11 +4,17 @@
 
 @layer components {
   .custom-scrollbar {
-    @apply scrollbar scrollbar-thin scrollbar-thumb-neutral scrollbar-thumb-rounded-xl
+    @apply scrollbar scrollbar-thin scrollbar-thumb-neutral scrollbar-thumb-rounded-xl;
   }
 
   .chat-small {
     @apply text-sm opacity-80;
   }
 
+  /* Переопределение menu от daisyUi */
+
+  .menu :where(li:not(.menu-title):not(:empty)) > :where(:not(ul).active),
+  .menu :where(li:not(.menu-title):not(:empty)) > :where(*:not(ul):active) {
+    @apply bg-neutral-focus text-base-content;
+  }
 }
