@@ -7,10 +7,7 @@ export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className="container">
       <Header />
-      <div className="flex">
-        <ChatsList />
-        {children}
-      </div>
+      {children}
     </div>
   );
 };
