@@ -1,5 +1,5 @@
 import { SpriteKey } from "@/shared/api";
-import {routes} from "@/shared/constants/routes";
+import { routes } from "@/shared/constants/routes";
 
 interface IMenuIitem {
   iconName: SpriteKey;

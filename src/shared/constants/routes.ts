@@ -5,5 +5,5 @@ export enum routes {
   FRIENDS = "/friends",
   MESSAGES = "/messages",
   TOOLS = "/tools",
-  EXIT = "/exit"
+  EXIT = "/exit",
 }

@@ -1,1 +1,1 @@
-export type {SpriteKey} from "./sprite-key";
+export type { SpriteKey } from "./sprite-key";
