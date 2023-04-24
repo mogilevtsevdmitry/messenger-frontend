@@ -16,6 +16,7 @@ export interface SpritesMap {
     | "video";
   notification: "bell";
   player: "next" | "play" | "prev";
+  settings: "account" | "exit" | "friends" | "group" | "message" | "tools";
   social: "google" | "vkontakte";
 }
 
@@ -38,5 +39,6 @@ export const SPRITES_META: { [K in keyof SpritesMap]: SpritesMap[K][] } = {
   ],
   notification: ["bell"],
   player: ["next", "play", "prev"],
+  settings: ["account", "exit", "friends", "group", "message", "tools"],
   social: ["google", "vkontakte"],
 };

@@ -1,10 +1,6 @@
 import { SVGProps } from "react";
 
-import { SpritesMap } from "./sprite.gen";
-
-export type SpriteKey = {
-  [Key in keyof SpritesMap]: `${Key}/${SpritesMap[Key]}`;
-}[keyof SpritesMap];
+import { SpriteKey } from "@/shared/api";
 
 export interface IconProps extends Omit<SVGProps<SVGSVGElement>, "name" | "type"> {
   name: SpriteKey;

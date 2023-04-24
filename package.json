@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "svg": "npx @neodx/svg --group --root src/assets -o public/sprite -d src/shared/ui/icon/sprite.gen.ts"
+    "svg": "npx @neodx/svg --group --root src/assets -o public/sprite -d src/shared/constants/sprite.gen.ts"
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -21,11 +21,13 @@
     "postcss": "8.4.21",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-transition-group": "^4.4.5",
     "react-hook-form": "^7.43.9",
     "tailwindcss": "3.3.1",
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/react-transition-group": "^4.4.5",
     "dependency-cruiser": "^12.11.1",
     "eslint-plugin-boundaries": "^3.1.1",
     "eslint-plugin-import": "^2.27.5",
