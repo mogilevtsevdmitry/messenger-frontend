@@ -1,5 +1,5 @@
 export enum MessageStatus {
-    PENDING = "pending",
-    SENT = "sent",
-    CHECKED = "checked",
+  PENDING = "pending",
+  SENT = "sent",
+  CHECKED = "checked",
 }

@@ -7,7 +7,7 @@ export const UserBtn = () => {
       <label tabIndex={0} className="btn-ghost btn">
         <UserCard />
       </label>
-      <div tabIndex={0} className="dropdown-content shadow w-52 bg-info-content p-2">
+      <div tabIndex={0} className="dropdown-content w-52 bg-info-content p-2 shadow">
         <MenuList />
       </div>
     </div>
