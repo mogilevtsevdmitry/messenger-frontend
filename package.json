@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "svg": "npx @neodx/svg --group --root assets -o public/sprite -d src/shared/ui/icon/sprite.gen.ts"
+    "svg": "npx @neodx/svg --group --root src/assets -o public/sprite -d src/shared/constants/sprite.ts"
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -22,6 +22,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-transition-group": "^4.4.5",
+    "react-hook-form": "^7.43.9",
     "tailwindcss": "3.3.1",
     "typescript": "5.0.4"
   },
@@ -32,6 +33,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "prettier": "^2.8.7",
-    "prettier-plugin-tailwindcss": "^0.2.7"
+    "prettier-plugin-tailwindcss": "^0.2.7",
+    "tailwind-scrollbar": "^3.0.0"
   }
 }

@@ -7,9 +7,8 @@ import { MusicPlayer } from "@/features/music-player";
 import { Notification } from "@/features/notification";
 import { Search } from "@/features/search";
 
-import { User } from "@/entities/user-header";
-
 import { Burger } from "./burger";
+import { UserBtn } from "./user-btn";
 
 export const Header = () => {
   const [isShowBurger, setIsShowBurger] = useState<boolean>(false);
@@ -27,12 +26,11 @@ export const Header = () => {
       <Link href="#" className="btn-ghost btn ml-auto text-xl normal-case lg:ml-0 lg:mr-10">
         Logo
       </Link>
-      <h1 onClick={() => setIsShowBurger(false)}>close</h1>
-      <div className="hidden flex-auto  items-center lg:flex">
+      <div className="hidden flex-1 items-center lg:flex">
         <Search />
         <Notification />
         <MusicPlayer />
-        <User />
+        <UserBtn />
       </div>
     </div>
   );

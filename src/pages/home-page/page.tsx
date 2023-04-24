@@ -1,9 +1,15 @@
-import { Header } from "@/widgets/header";
+import {MainLayout} from "@/widgets/layouts";
 
 export const HomePage = () => {
-  return (
-    <main>
-      <Header />
-    </main>
-  );
+    return (
+        <MainLayout>
+            <main>
+                <div className="flex gap-2">
+                    {/*<ChatsList/>*/}
+                    {/*<Chat/>*/}
+                    {/*<ChatInfo/>*/}
+                </div>
+            </main>
+        </MainLayout>
+    );
 };

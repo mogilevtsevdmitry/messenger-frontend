@@ -113,7 +113,7 @@
           },
           { "from": "processes", "allow": ["pages", "widgets", "features", "entities", "shared"] },
           { "from": "pages", "allow": ["widgets", "features", "entities", "shared"] },
-          { "from": "widgets", "allow": ["features", "entities", "shared"] },
+          { "from": "widgets", "allow": ["features", "entities", "shared", "widgets"] }, // import widgets in widgets allowed only for LAYOUTS SLICE
           { "from": "features", "allow": ["entities", "shared"] },
           { "from": "entities", "allow": ["shared"] },
           { "from": "shared", "allow": ["shared"] }
@@ -123,7 +123,3 @@
   },
   "overrides": [{ "files": ["**/*.test.*"], "rules": { "boundaries/element-types": "off" } }]
 }
-
-//{
-//  "extends": "next/core-web-vitals"
-//}
