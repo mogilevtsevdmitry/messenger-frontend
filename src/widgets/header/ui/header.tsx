@@ -1,33 +1,33 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
-import { useSwipeable } from "react-swipeable";
+import React, { useState, useEffect } from "react";
 
 import { MusicPlayer } from "@/features/music-player";
 import { Notification } from "@/features/notification";
 import { Search } from "@/features/search";
+
+import { useSwipe } from "../lib";
 
 import { Burger } from "./burger";
 import { UserBtn } from "./user-btn";
 
 export const Header = () => {
   const [isShowBurger, setIsShowBurger] = useState<boolean>(false);
-
-  const { ref: documentRef } = useSwipeable({
-    onSwipedRight: ({ dir, event }) => {
-      setIsShowBurger(true);
-    },
+  const handlersSwipe = useSwipe({
+    swipeRight: () => setIsShowBurger(true),
   });
 
   useEffect(() => {
-    documentRef(document.documentElement);
+    document.addEventListener("touchstart", (e: any) => handlersSwipe.onTouchStart(e));
+    document.addEventListener("touchmove", (e: any) => handlersSwipe.onTouchMove(e));
+    document.addEventListener("touchend", (e: any) => handlersSwipe.onTouchEnd(e));
 
-    return () => documentRef(null);
-  });
+    return () => document.removeEventListener("touchstart", handlersSwipe.onTouchStart);
+  }, []);
 
   return (
-    <div className="navbar bottom-0 z-10 mx-auto max-w-[1190px]">
+    <div {...handlersSwipe} className="navbar bottom-0 z-10 mx-auto">
       <button
         onClick={() => setIsShowBurger(true)}
         className="flex flex-col items-start space-y-2 lg:hidden">
