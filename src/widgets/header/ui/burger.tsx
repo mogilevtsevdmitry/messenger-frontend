@@ -1,26 +1,29 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 
 import { MenuList } from "@/features/menu-list";
 
 import { UserCard } from "@/entities/user-card";
-import {useSwipeable} from "react-swipeable";
+
+import { useSwipe } from "../lib";
 
 interface BurgerProps {
   isShow: boolean;
   close: () => void;
 }
 
-export const Burger: React.FC<BurgerProps> = ({ isShow , close}) => {
-  const handlers = useSwipeable({
-    trackMouse: true,
-    onSwipedLeft: close
+export const Burger: React.FC<BurgerProps> = ({ isShow, close }) => {
+  const burgerRef = useRef<HTMLDivElement | null>(null);
+  const handlersSwipe = useSwipe({
+    swipeLeft: close,
+    distanceLeft: burgerRef.current?.clientWidth,
   });
 
   return (
     <CSSTransition in={isShow} classNames="burger" timeout={500} unmountOnExit>
       <div
-        {...handlers}
+        {...handlersSwipe}
+        ref={burgerRef}
         onClick={(e) => e.stopPropagation()}
         className="burger fixed bottom-0 left-0 top-0 flex">
         <div className="flex h-full w-72 flex-col overflow-y-auto bg-neutral p-3 shadow">
