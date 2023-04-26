@@ -6,10 +6,12 @@ export const metadata = {
   description: "Simple messenger app",
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en" data-theme="night">
       <body>{children}</body>
     </html>
   );
-}
+};
+
+export default RootLayout;
