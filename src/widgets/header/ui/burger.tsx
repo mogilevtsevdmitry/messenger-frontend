@@ -19,12 +19,16 @@ export const Burger: React.FC<BurgerProps> = ({ isShow, close }) => {
     distanceLeft: burgerRef.current?.clientWidth,
   });
 
+  const closeBurger = (): void => {
+    close();
+    return document.removeEventListener("click", closeBurger);
+  }
   return (
     <CSSTransition in={isShow} classNames="burger" timeout={500} unmountOnExit>
       <div
         {...handlersSwipe}
         ref={burgerRef}
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}
         className="burger fixed bottom-0 left-0 top-0 flex">
         <div className="flex h-full w-72 flex-col overflow-y-auto bg-neutral p-3 shadow">
           <div className="space-y-3">

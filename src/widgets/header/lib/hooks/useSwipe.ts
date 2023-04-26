@@ -5,7 +5,7 @@ interface useSwipeProps {
   swipeLeft?: () => void;
   distanceLeft?: number;
 }
-export const useSwipe = ({ swipeRight, swipeLeft, distanceLeft  }: useSwipeProps) => {
+export const useSwipe = ({ swipeRight, swipeLeft, distanceLeft }: useSwipeProps) => {
   let startX = 0;
   let direction = "";
   let maxLeft = 0;
@@ -25,9 +25,10 @@ export const useSwipe = ({ swipeRight, swipeLeft, distanceLeft  }: useSwipeProps
 
   const onTouchEnd = (e: any) => {
     const isRight = direction === "right" && startX < maxLeft;
+    const isLeft = direction === "left" && startX < maxLeft;
     if (swipeRight && isRight && e.changedTouches[0].pageX > startX + 15) {
       swipeRight();
-    } else if (swipeLeft && !isRight && e.changedTouches[0].pageX < startX + 15) {
+    } else if (swipeLeft && isLeft && e.changedTouches[0].pageX < startX + 15) {
       swipeLeft();
     }
   };
