@@ -1,21 +1,24 @@
-import { useState } from "react";
+import React from "react";
 
 interface useSwipeProps {
   swipeRight?: () => void;
   swipeLeft?: () => void;
   distanceLeft?: number;
 }
-export const useSwipe = ({ swipeRight, swipeLeft, distanceLeft  }: useSwipeProps) => {
+
+type SwipeTouchEvent = React.TouchEvent<HTMLDivElement> | TouchEvent;
+
+export const useSwipe = ({ swipeRight, swipeLeft, distanceLeft }: useSwipeProps) => {
   let startX = 0;
   let direction = "";
   let maxLeft = 0;
 
-  const onTouchStart = (e: any) => {
+  const onTouchStart = (e: SwipeTouchEvent) => {
     startX = e.changedTouches[0].pageX;
     maxLeft = distanceLeft || window.innerWidth / 4;
   };
 
-  const onTouchMove = (e: any) => {
+  const onTouchMove = (e: SwipeTouchEvent) => {
     if (e.changedTouches[0].pageX > startX) {
       direction = "right";
     } else {
@@ -23,7 +26,7 @@ export const useSwipe = ({ swipeRight, swipeLeft, distanceLeft  }: useSwipeProps
     }
   };
 
-  const onTouchEnd = (e: any) => {
+  const onTouchEnd = (e: SwipeTouchEvent) => {
     const isRight = direction === "right" && startX < maxLeft;
     if (swipeRight && isRight && e.changedTouches[0].pageX > startX + 15) {
       swipeRight();

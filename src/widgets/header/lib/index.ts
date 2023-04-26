@@ -1,1 +1,1 @@
-export {useSwipe} from "./hooks";
+export { useSwipe } from "./hooks";

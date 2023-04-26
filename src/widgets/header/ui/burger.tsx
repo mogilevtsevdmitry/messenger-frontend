@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 
 import { MenuList } from "@/features/menu-list";

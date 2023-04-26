@@ -19,9 +19,9 @@ export const Header = () => {
   });
 
   useEffect(() => {
-    document.addEventListener("touchstart", (e: any) => handlersSwipe.onTouchStart(e));
-    document.addEventListener("touchmove", (e: any) => handlersSwipe.onTouchMove(e));
-    document.addEventListener("touchend", (e: any) => handlersSwipe.onTouchEnd(e));
+    document.addEventListener("touchstart", (e) => handlersSwipe.onTouchStart(e));
+    document.addEventListener("touchmove", (e) => handlersSwipe.onTouchMove(e));
+    document.addEventListener("touchend", (e) => handlersSwipe.onTouchEnd(e));
 
     return () => document.removeEventListener("touchstart", handlersSwipe.onTouchStart);
   }, []);
