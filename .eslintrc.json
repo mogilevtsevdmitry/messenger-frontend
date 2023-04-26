@@ -4,9 +4,11 @@
     "plugin:import/warnings",
     "plugin:import/typescript",
     "plugin:boundaries/recommended",
+    "plugin:react/recommended",
     "next/core-web-vitals"
   ],
   "parser": "@typescript-eslint/parser",
+  "ignorePatterns": ["*/**.svg"],
   "settings": {
     "import/resolver": { "typescript": {} },
     "boundaries/elements": [
@@ -22,6 +24,15 @@
   },
   "rules": {
     "quotes": ["warn", "double"],
+    "object-curly-spacing": ["warn", "always"],
+    "linebreak-style": ["warn", "unix"],
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
     "import/order": [
       "error",
       {
