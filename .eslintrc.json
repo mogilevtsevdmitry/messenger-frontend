@@ -5,6 +5,7 @@
     "plugin:import/typescript",
     "plugin:boundaries/recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "next/core-web-vitals"
   ],
   "parser": "@typescript-eslint/parser",
@@ -33,6 +34,7 @@
         "unnamedComponents": "arrow-function"
       }
     ],
+    "react-hooks/exhaustive-deps": "off",
     "import/order": [
       "error",
       {
