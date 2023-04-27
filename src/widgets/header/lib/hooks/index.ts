@@ -1,1 +1,1 @@
-export {useSwipe} from "./useSwipe";
+export { useSwipe } from "./useSwipe";

@@ -7,7 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "svg": "npx @neodx/svg --group --root src/assets -o public/sprite -d src/shared/constants/sprite.gen.ts"
+    "svg": "npx @neodx/svg --group --root src/assets -o public/sprite -d src/shared/constants/sprite.gen.ts",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{css,scss,html,json}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -15,7 +24,6 @@
     "@types/react-dom": "18.0.11",
     "autoprefixer": "10.4.14",
     "daisyui": "^2.51.5",
-    "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
     "next": "^13.3.1-canary.4",
     "postcss": "8.4.21",
@@ -29,9 +37,13 @@
   "devDependencies": {
     "@types/react-transition-group": "^4.4.5",
     "dependency-cruiser": "^12.11.1",
+    "eslint": "^8.39.0",
     "eslint-plugin-boundaries": "^3.1.1",
     "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.1",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.7",
     "tailwind-scrollbar": "^3.0.0"
